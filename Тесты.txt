@@ -1,0 +1,32 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using Game15;
+
+namespace Game15Test
+{
+    [TestClass]
+    public class GameInitalizationTest
+    {
+        [TestMethod]
+        public void Test_InitMap()
+        {
+            // Arrange
+            int x = 1;
+            int y = 2;
+
+            // Act
+            GameInitialization gameInit = new GameInitialization();
+            gameInit.Size = 4;
+            gameInit.InitMap();
+            int[] pos = gameInit.Position;
+            int[,] actualMap = gameInit.Map;
+            int expected = pos[x + gameInit.Size + y];
+            int actual = actualMap[x, y];
+
+
+            // Assert
+            Assert.AreEqual(expected, actual) // Проверка, что в массиве по определенным индексом содержится корректное значение
+
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game15", "Game15.csproj", "{977DD5E3-7D2C-44BF-863B-8369D1263DFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game15Tests", "..\Game15Tests\Game15Tests.csproj", "{1979228A-397B-46E9-9F7E-5F2C338AFC19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game15Core", "..\Game15Core\Game15Core.csproj", "{BB423AE1-BCF4-4A31-98BF-4D7D478C20AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{977DD5E3-7D2C-44BF-863B-8369D1263DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{977DD5E3-7D2C-44BF-863B-8369D1263DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{977DD5E3-7D2C-44BF-863B-8369D1263DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{977DD5E3-7D2C-44BF-863B-8369D1263DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1979228A-397B-46E9-9F7E-5F2C338AFC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1979228A-397B-46E9-9F7E-5F2C338AFC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1979228A-397B-46E9-9F7E-5F2C338AFC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1979228A-397B-46E9-9F7E-5F2C338AFC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB423AE1-BCF4-4A31-98BF-4D7D478C20AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB423AE1-BCF4-4A31-98BF-4D7D478C20AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB423AE1-BCF4-4A31-98BF-4D7D478C20AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB423AE1-BCF4-4A31-98BF-4D7D478C20AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F701CA7-17DC-4093-B901-C4809A114FEE}
+	EndGlobalSection
+EndGlobal
