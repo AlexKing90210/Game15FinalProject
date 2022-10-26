@@ -1,10 +1,3 @@
-using System;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Game15Core;
 
 
@@ -12,22 +5,20 @@ namespace Game15
 {
     public partial class GameForm : Form
     {
+        // Инициализация подготовки игры
         GameInitialization gameInit = new GameInitialization();
-        
-
+        // Инициализация самой игры
         GameLogic game = new GameLogic();
         
         public GameForm()
         {
             InitializeComponent();
-
             gameInit.Size = 4;
-            
         }
 
+        // Инициализация новой игры
         private void GameStart()
         {
-            // Инициализация новой игры
             gameInit.InitMap();
             game.Size = gameInit.Size;
             game.Map = gameInit.Map;
@@ -36,28 +27,31 @@ namespace Game15
             game.GameEnd = false;
         }
 
+        // Метод, который запускает новую игру, каждый раз при нажатии на клавишу "Новая игра"
         private void начатьИгруToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GameStart();
             refresh();
         }
 
+        // Метод, который запускает новую игру, каждый раз при запуске программы
         private void GameForm_Load(object sender, EventArgs e)
         {
             GameStart();
             refresh();
         }
 
+        // Метод, отвечающий за перерисовку клавиш при перемещении
         private void button0_Click(object sender, EventArgs e)
         {
             int position = 0;
             position = int.Parse((string)((Button)sender).Tag);
             game.shiftMove(position);
             refresh();
-                
+            
+            // Проверка условия окончания игры
             if (game.GameEnd == true)
             {
-                //MessageBox.Show("Вы победили!");
                 if(MessageBox.Show("Вы победили!") == DialogResult.OK)
                 {
                     GameStart();
@@ -67,7 +61,7 @@ namespace Game15
 
         }
 
-
+        // Метод, который определяет нажатую кнопку
         private Button button(int position)
         {
             switch(position)
@@ -91,6 +85,8 @@ namespace Game15
                 default: return null;
             }
         }
+
+        // Метод, отвечающий за перерисовку номеров на кнопках игрового поля
         private void refresh()
         {
             for (int position = 0; position < 16; position++)

@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Game15Core
+﻿namespace Game15Core
 {
     public class GameInitialization
     {
+        // Основной двумерный массив используемый в игре
         private int[,] map;
-        private int size;
-        private int[] positions;
-        private int zero_X;
-        private int zero_Y;
 
+        // Размер стороны игрового поля
+        private int size;
+
+        // Массив номеров от 1 до size^2
+        private int[] positions;
+
+        // Позиция нуля по координате X в массиве Map
+        private int zero_X;
+
+        // Позиция нуля по координтае Y в массиве Map
+        private int zero_Y;
 
         public int[,] Map
         {
@@ -45,6 +47,8 @@ namespace Game15Core
             set { zero_Y = value; }
         }
 
+
+        // Метод, заполняющий массив значений элементами от 0 до 16
         private void PositionsBuilder()
         {
             int size = this.Size;
@@ -55,9 +59,9 @@ namespace Game15Core
             }
         }
 
+        // Метод для перемешивания чисел в массиве значений
         private void Shuffle()
         {
-            // Метод для перемешивания чисел
             int[] arr = this.Positions;
             Random rnd = new Random();
             for (int i = 0; i < 100; i++)
@@ -77,9 +81,9 @@ namespace Game15Core
             }
         }
 
+        // Метод инициализирующий игровое поле и связи между полями класса
         public void InitMap()
         {
-            // Метод инициализирующий игровое поле и связи между полями класса
             int size = this.Size;
             this.PositionsBuilder();
             this.Shuffle();
@@ -96,9 +100,9 @@ namespace Game15Core
                 }
         }
 
+        // Метод для получения текущего элемента массива в зависимости от кнопки на форме
         public int GetNumber(int position)
         {
-            // Метод для получения текущего элемента массива в зависимости от кнопки на форме
             int x, y;
             x = position / this.Size;
             y = position % this.Size;

@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Game15Core
+﻿namespace Game15Core
 {
     public class GameLogic
     {
+        // Основной двумерный массив используемый в игре
         private int[,] map;
+
+        // Позиция нуля по координате X в массиве Map
         private int zero_X;
+
+        // Позиция нуля по координате Y в массиве Map
         private int zero_Y;
+
+        // Признак окончания игры
         private bool gameEnd;
+
+        // Размер стороны игрового поля
         private int size;
 
         public int[,] Map
@@ -44,6 +47,7 @@ namespace Game15Core
             set { size = value; }
         }
 
+        // Метод преобразующий позицию в координаты на игровом поле
         private int[] PositionToCoord(int position)
         {
             int x, y;
@@ -57,10 +61,9 @@ namespace Game15Core
             return result;
         }
 
-
+        // Метод, который позволяет совершать ход
         public void shiftMove(int position)
         {
-            // Метод для инициализации хода
             // Получим координаты выбранной позиции
             int[] result = PositionToCoord(position);
             int result_X = result[0];
@@ -82,9 +85,9 @@ namespace Game15Core
 
         }
 
+        // Метод для определения признака победы
         private void IsWin()
         {
-            // Метод для определения признака победы
             int[] value = new int[this.Size * this.Size];
             int[] testCase = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0};
 
