@@ -111,9 +111,6 @@
             {
                 this.GameEnd = true;
             }
-            
         }
-
-
     }
 }

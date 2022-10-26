@@ -109,6 +109,5 @@
 
             return this.Map[x, y];
         }
-
     }
 }

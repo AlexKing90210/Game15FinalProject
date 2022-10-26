@@ -96,7 +96,5 @@ namespace Game15
                 button(position).Visible = (func > 0);
             }
         }
-
-        
     }
 }
