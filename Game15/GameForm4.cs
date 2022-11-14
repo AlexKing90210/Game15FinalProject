@@ -3,14 +3,14 @@ using Game15Core;
 
 namespace Game15
 {
-    public partial class GameForm : Form
+    public partial class GameForm4 : Form
     {
         // Инициализация подготовки игры
         GameInitialization gameInit = new GameInitialization();
         // Инициализация самой игры
         GameLogic game = new GameLogic();
         
-        public GameForm()
+        public GameForm4()
         {
             InitializeComponent();
             gameInit.Size = 4;

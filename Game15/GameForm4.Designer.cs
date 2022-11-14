@@ -1,6 +1,6 @@
 ﻿namespace Game15
 {
-    partial class GameForm
+    partial class GameForm4
     {
         /// <summary>
         ///  Required designer variable.
