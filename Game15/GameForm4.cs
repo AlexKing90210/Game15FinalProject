@@ -1,22 +1,22 @@
-using Game15Core;
+п»їusing Game15Core;
 
 
 namespace Game15
 {
     public partial class GameForm4 : Form
     {
-        // Инициализация подготовки игры
+        // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїРѕРґРіРѕС‚РѕРІРєРё РёРіСЂС‹
         GameInitialization gameInit = new GameInitialization();
-        // Инициализация самой игры
+        // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃР°РјРѕР№ РёРіСЂС‹
         GameLogic game = new GameLogic();
-        
+
         public GameForm4()
         {
             InitializeComponent();
             gameInit.Size = 4;
         }
 
-        // Инициализация новой игры
+        // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃР°РјРѕР№ РёРіСЂС‹
         private void GameStart()
         {
             gameInit.InitMap();
@@ -25,34 +25,35 @@ namespace Game15
             game.Zero_X = gameInit.Zero_X;
             game.Zero_Y = gameInit.Zero_Y;
             game.GameEnd = false;
+            game.CountShift = 0;
         }
 
-        // Метод, который запускает новую игру, каждый раз при нажатии на клавишу "Новая игра"
-        private void начатьИгруToolStripMenuItem_Click(object sender, EventArgs e)
+        // РњРµС‚РѕРґ, РєРѕС‚РѕСЂС‹Р№ Р·Р°РїСѓСЃРєР°РµС‚ РЅРѕРІСѓСЋ РёРіСЂСѓ, РєР°Р¶РґС‹Р№ СЂР°Р· РїСЂРё РЅР°Р¶Р°С‚РёРё РЅР° РєР»Р°РІРёС€Сѓ "РќРѕРІР°СЏ РёРіСЂР°"
+        private void РЅР°С‡Р°С‚СЊРРіСЂСѓToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GameStart();
             refresh();
         }
 
-        // Метод, который запускает новую игру, каждый раз при запуске программы
+        // РњРµС‚РѕРґ, РєРѕС‚РѕСЂС‹Р№ Р·Р°РїСѓСЃРєР°РµС‚ РЅРѕРІСѓСЋ РёРіСЂСѓ, РєР°Р¶РґС‹Р№ СЂР°Р· РїСЂРё Р·Р°РїСѓСЃРєРµ РїСЂРѕРіСЂР°РјРјС‹
         private void GameForm_Load(object sender, EventArgs e)
         {
             GameStart();
             refresh();
         }
 
-        // Метод, отвечающий за перерисовку клавиш при перемещении
+        // РњРµС‚РѕРґ, РѕС‚РІРµС‡Р°СЋС‰РёР№ Р·Р° РїРµСЂРµСЂРёСЃРѕРІРєСѓ РєР»Р°РІРёС€ РїСЂРё РїРµСЂРµРјРµС‰РµРЅРёРё
         private void button0_Click(object sender, EventArgs e)
         {
             int position = 0;
             position = int.Parse((string)((Button)sender).Tag);
             game.shiftMove(position);
             refresh();
-            
-            // Проверка условия окончания игры
+
+            // РџСЂРѕРІРµСЂРєР° СѓСЃР»РѕРІРёСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РёРіСЂС‹
             if (game.GameEnd == true)
             {
-                if(MessageBox.Show("Вы победили!") == DialogResult.OK)
+                if (MessageBox.Show("Р’С‹ РїРѕР±РµРґРёР»Рё!") == DialogResult.OK)
                 {
                     GameStart();
                     refresh();
@@ -61,10 +62,10 @@ namespace Game15
 
         }
 
-        // Метод, который определяет нажатую кнопку
+        // РњРµС‚РѕРґ, РєРѕС‚РѕСЂС‹Р№ РѕРїСЂРµРґРµР»СЏРµС‚ РЅР°Р¶Р°С‚СѓСЋ РєРЅРѕРїРєСѓ
         private Button button(int position)
         {
-            switch(position)
+            switch (position)
             {
                 case 0: return button0;
                 case 1: return button1;
@@ -86,7 +87,7 @@ namespace Game15
             }
         }
 
-        // Метод, отвечающий за перерисовку номеров на кнопках игрового поля
+        // РњРµС‚РѕРґ, РѕС‚РІРµС‡Р°СЋС‰РёР№ Р·Р° РїРµСЂРµСЂРёСЃРѕРІРєСѓ РЅРѕРјРµСЂРѕРІ РЅР° РєРЅРѕРїРєР°С… РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
         private void refresh()
         {
             for (int position = 0; position < 16; position++)

@@ -17,6 +17,9 @@
         // Размер стороны игрового поля
         private int size;
 
+        // Счетчик ходов
+        private int countShift;
+
         public int[,] Map
         {
             get { return map; }
@@ -45,6 +48,12 @@
         {
             get { return size; }
             set { size = value; }
+        }
+
+        public int CountShift
+        {
+            get { return countShift; }
+            set { countShift = value; }
         }
 
         // Метод преобразующий позицию в координаты на игровом поле
@@ -81,6 +90,7 @@
             this.Map[result_X, result_Y] = 0;
             this.Zero_X = result_X;
             this.Zero_Y = result_Y;
+            this.CountShift++;
             this.IsWin();
 
         }
