@@ -377,6 +377,7 @@
             this.Name = "GameForm4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Пятнашки";
+            this.Load += new System.EventHandler(this.GameForm4_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

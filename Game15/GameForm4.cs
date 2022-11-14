@@ -36,7 +36,7 @@ namespace Game15
         }
 
         // Метод, который запускает новую игру, каждый раз при запуске программы
-        private void GameForm_Load(object sender, EventArgs e)
+        private void GameForm4_Load(object sender, EventArgs e)
         {
             GameStart();
             refresh();
@@ -48,6 +48,7 @@ namespace Game15
             int position = 0;
             position = int.Parse((string)((Button)sender).Tag);
             game.shiftMove(position);
+            label2.Text = game.CountShift.ToString();
             refresh();
 
             // Проверка условия окончания игры
