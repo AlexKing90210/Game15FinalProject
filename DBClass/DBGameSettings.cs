@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DBClass
 {
-    internal class DBGameSettings
+    public class DBGameSettings
     {
+        public int Id { get; set; }
+        public string LeftShift { get; set; }
+        public string RightShift { get; set; }
+        public string UpShift { get; set; }
+        public string DownShift { get; set; }
     }
 }

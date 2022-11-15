@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DBClass
 {
-    internal class DBCurrentGame
+    public class DBCurrentGame
     {
+        public int Id { get; set; }
+        public int GameSize { get; set; }
+        public int CountMove { get; set; }
+        public string Digits { get; set; }
     }
 }
