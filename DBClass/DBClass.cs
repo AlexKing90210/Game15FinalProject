@@ -12,10 +12,18 @@ namespace DBClass
 
         public void CreateDb()
         {
-            if (!File.Exists(@"TestDB.db"))
+            string curFile = "TestDB.db";
+            Console.WriteLine(curFile);
+            if (!File.Exists(curFile))
             {
-                SQLiteConnection.CreateFile(@"TestDB.db"); 
-            }           
+                SQLiteConnection.CreateFile(curFile);
+            }
+        }
+
+        static void Main()
+        {
+            DBClass dbClass = new DBClass();
+            dbClass.CreateDb();
         }
     };
 }

@@ -1,4 +1,6 @@
 ﻿using Game15Core;
+using DBClass;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Game15
@@ -9,6 +11,8 @@ namespace Game15
         GameInitialization gameInit = new GameInitialization();
         // Инициализация самой игры
         GameLogic game = new GameLogic();
+
+        DBClass.ApplicationContext db = new DBClass.ApplicationContext();
 
         public GameForm4()
         {
@@ -38,6 +42,13 @@ namespace Game15
         // Метод, который запускает новую игру, каждый раз при запуске программы
         private void GameForm4_Load(object sender, EventArgs e)
         {
+            // гарантируем, что база данных создана
+            db.Database.EnsureCreated();
+            // загружаем данные из БД
+            db.Winners.Load();
+            System.Collections.ObjectModel.ObservableCollection<Winners>
+            // и устанавливаем данные в качестве контекста
+            DataContext = db.Winners.Local.ToObservableCollection();
             GameStart();
             refresh();
         }
