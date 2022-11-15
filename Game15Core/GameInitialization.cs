@@ -62,6 +62,8 @@
         // Метод для перемешивания чисел в массиве значений
         private void Shuffle()
         {
+            int counter = 0;
+            int nullPostion = 0;
             int[] arr = this.Positions;
             Random rnd = new Random();
             for (int i = 0; i < 100; i++)
@@ -73,12 +75,41 @@
                 arr[rndInd2] = temp;
             }
 
+            // Проверка на комбинации, при которых игра не разрешима (Параметр беспордяка)
+            // Если сумма числа пар костяшек, в которых костяшка с большим номером идёт перед костяшкой с меньшим номером,
+            // и номера ряда пустой клетки (начиная с 1) == Нечетна
+            // Тогда игра не разрешима
+            for (int i = 0; i < size; i++)
+            {
+                int[] mas = new int[size];
+                for (int j = 0; j < size; j++)
+                {
+                    mas[j] = arr[i * size + j];
+
+                }
+                for (int x = 0; x < size; x++)
+                {
+                    if (mas[x] == 0)
+                    {
+                        nullPostion = i + 1;
+                    }
+
+                    if (x != size - 1 && (mas[x + 1] != 0))
+                    {
+                        if (mas[x] > mas[x + 1])
+                        {
+                            counter++;
+                        };
+                    }
+                }
+            }
+
             // Проверка на комбинации, при которых игра не разрешима
-            if ((arr[arr.Length - 2] == 15 && arr[arr.Length - 3] == 14)
-                || (arr[arr.Length - 2] == 14 && arr[arr.Length - 3] == 15))
+            if((counter + nullPostion) % 2 == 1)
             {
                 this.Shuffle();
             }
+
         }
 
         // Метод инициализирующий игровое поле и связи между полями класса
