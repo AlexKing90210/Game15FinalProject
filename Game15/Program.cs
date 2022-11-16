@@ -11,7 +11,11 @@ namespace Game15
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new GameForm4());
+            {
+                Application.Run(new StartWindowWithResume());
+            }
+            //Application.Run(new StartWindow());
+
         }
     }
 }

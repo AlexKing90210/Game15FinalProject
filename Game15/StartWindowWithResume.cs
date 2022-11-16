@@ -16,5 +16,21 @@ namespace Game15
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GameForm4 gameForm = new GameForm4();
+            gameForm.GameStart();
+            gameForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GameForm4 gameForm = new GameForm4();
+            gameForm.GameResume();
+            gameForm.Show();
+        }
     }
 }

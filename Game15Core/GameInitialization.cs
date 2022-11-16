@@ -116,6 +116,7 @@
         public void InitMap()
         {
             int size = this.Size;
+            
             this.PositionsBuilder();
             this.Shuffle();
             this.Map = new int[size, size];
