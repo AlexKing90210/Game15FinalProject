@@ -102,7 +102,7 @@ namespace Game15
             // загружаем данные из БД
             db.Winners.Load();
             // db.DBCurrentGame.Load();
-            System.Collections.ObjectModel.ObservableCollection<Winners>
+            System.Collections.ObjectModel.ObservableCollection<DBWinners>
             // и устанавливаем данные в качестве контекста
             DataContextWinners = db.Winners.Local.ToObservableCollection();
 

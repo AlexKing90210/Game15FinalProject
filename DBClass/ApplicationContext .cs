@@ -4,7 +4,7 @@ namespace DBClass
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<Winners> Winners { get; set; } = null!;
+        public DbSet<DBWinners> Winners { get; set; } = null!;
         public DbSet<DBCurrentGame> DBCurrentGame { get; set; } = null!;
         public DbSet<DBGameSettings> DBGameSettings { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -32,5 +32,12 @@ namespace Game15
             gameForm.GameResume();
             gameForm.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TableWinners winners = new TableWinners();
+            winners.Show();
+        }
     }
 }

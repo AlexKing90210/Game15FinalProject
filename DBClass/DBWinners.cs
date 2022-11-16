@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBClass
 {
-    public class Winners
+    public class DBWinners
     {
         public int Id { get; set; }
         public string? Name { get; set; }
